@@ -15,7 +15,7 @@ This project consists of three Python problems assigned to __Experiment 3: Pytho
   cars
 
   This evaluates to the data frame cars.csv that was asked for.
- ```
+  ```
  
   ```
   cars = pd.DataFrame(cars)
@@ -35,7 +35,9 @@ This project consists of three Python problems assigned to __Experiment 3: Pytho
 
   (32, 12)
   ```
-* The `cars.iloc[row_position:column_position]`, stands for integer location, an integer position-based slicing to isolate specific conditions. Since Python utilizes zero-based indexing, the lower bound input `5` prints out the 6th row, whereas the upper bound input `10` is exclusive, meaning the slice stops exactly before index 10. The boundaries successfully printed the row indices 5 to 9 to match the requested rows.
+* The `cars.iloc[5:10]`, stands for integer location, an integer position-based slicing to isolate specific conditions.
+    * `5` --> It functions as the inclusive lower bound.  Since Python utilizes zero-based indexing, it prints out the 6th row of the data set.
+    * `10` --> It functions as the exclusive upper bound, meaning the slice stops exactly before index 10. The boundaries successfully printed row           indices 5-9 to match the requested rows.
 
    ```
   cars_6_to_10 = cars.iloc[5:10] 
@@ -57,3 +59,5 @@ This project consists of three Python problems assigned to __Experiment 3: Pytho
 
   This evaluates to the Model, mpg, cyl, hp, and gear of the car models.
   ```
+
+B. 
