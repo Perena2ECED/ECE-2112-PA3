@@ -113,5 +113,8 @@ The problem asks to display data stored under selected_cars for the models: Dats
    ```
 # Version History
 
-* 
+* 04 September 2026 --> Initial README file was created, and the .ipynb file was uploaded.
+* 05 September 2026 --> README file was being updated.
+* 06 September 2026 --> README file was being finalized.
+* 09 September 2026 --> Final README file and the final .ipynb were uploaded. 
 
