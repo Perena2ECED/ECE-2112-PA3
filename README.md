@@ -28,14 +28,14 @@ This project consists of three Python problems assigned to __Experiment 3: Pytho
 # A. POSITIONAL AND LABEL-BASED SLICING
   The problem asks to display the shape and the complete list of column names of cars using positional slicing with the arbitrary variable               cars_6_to_10, isolating rows 6 to 10, which displays only the columns Models, mpg, cyl, hp, and gear, while utilizing iloc and column labels.
 
-* The `cars.shape` shows a structural tuple describing the exact dimensions of the DataFrame. It outputs numbers structured in `(rows, columns), allowing to verify the structural size of the data set.
+* The `cars.shape` returns a structural tuple describing the exact dimensions of the DataFrame. It outputs numbers structured in `(rows, columns), allowing to verify the structural size of the data set.
 
    ```
   cars.shape
 
   (32, 12)
   ```
-* The `cars.iloc[5:10]`, stands for integer location, an integer position-based slicing to isolate specific conditions.
+* The `cars.iloc[5:10]`, stands for __integer location__, an integer position-based slicing to isolate specific conditions.
     * `5` --> It functions as the inclusive lower bound.  Since Python utilizes zero-based indexing, it prints out the 6th row of the data set.
     * `10` --> It functions as the exclusive upper bound, meaning the slice stops exactly before index 10. The boundaries successfully printed row           indices 5-9 to match the requested rows.
 
@@ -45,7 +45,9 @@ This project consists of three Python problems assigned to __Experiment 3: Pytho
 
   This evaluates to the car model from the 6th to the 9th row, including all columns: mpg, cyl, disp, hp, drat, wt, qsec, vs, am, gear, and carb. 
   ```
-* The `cars_6_to_10.loc[]` handles label-based selections across two dimensions separated by a comma. The colon symbol `:` functions as an operator that instructs Pandas to retain the rows in the current slice. The secondary list containing the collection of strings asks like cars_6_to_10 = cars_6_to_10.loc[0:,`['Model', 'mpg', 'cyl', 'hp', 'gear']`] functions as a column filter wherein the syntax only prints the request variables in that order.
+* The `cars_6_to_10.loc[]` handles label-based selections across two dimensions separated by a comma.
+  * The colon symbol `:` functions as an operator that instructs Pandas to retain the rows in the current slice.
+  * The secondary list containing the collection of strings asks like `cars_6_to_10 = cars_6_to_10.loc[0:,`['Model', 'mpg', 'cyl', 'hp', 'gear']`]` functions as a column filter wherein the syntax only prints the request variables in that order.
 
   ```
   cars.loc[:,['Model']]
@@ -109,5 +111,7 @@ The problem asks to display data stored under selected_cars for the models: Dats
 
    (3, 5)
    ```
+# Version History
 
+* 
 
