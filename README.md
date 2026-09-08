@@ -6,6 +6,7 @@ Paulene Anne V. Pereña <br>
 This repository contains the Programming Assignment 3 for the course Advanced Computer Programming (ECE2112).
 This project consists of three Python problems assigned to __Experiment 3: Python Data Analysis (PANDAS).__
 
+The specific functions and syntax structures utilized throughout the codebase were implemented as follows:
 
 * The statement `import pandas as pd` loads an external data library into the environment. The `pd` creates a shortened  namespace handle to lessen typing time.
 * The function `pd.read_csv("file name")` is used to load a comma-separated values file that automatically converts it into rows and columns into a structured class known as `pd.DataFrame`, which holds a two-dimensional data structure that holds heterogeneous data types.
@@ -47,7 +48,7 @@ This project consists of three Python problems assigned to __Experiment 3: Pytho
   ```
 * The `cars_6_to_10.loc[]` handles label-based selections across two dimensions separated by a comma.
   * The colon symbol `:` functions as an operator that instructs Pandas to retain the rows in the current slice.
-  * The secondary list containing the collection of strings asks like `cars_6_to_10 = cars_6_to_10.loc[0:,`['Model', 'mpg', 'cyl', 'hp', 'gear']`]` functions as a column filter wherein the syntax only prints the request variables in that order.
+  * The secondary list containing the collection of strings asks like cars_6_to_10 = cars_6_to_10.loc[0:,`['Model', 'mpg', 'cyl', 'hp', 'gear']`]` functions as a column filter wherein the syntax only prints the request variables in that order.
 
   ```
   cars.loc[:,['Model']]
@@ -65,7 +66,7 @@ This project consists of three Python problems assigned to __Experiment 3: Pytho
 # B. MODEL LOOKUP
 The problem asks to display the complete row for the Toyota Corolla and only the model. mpg, hp, and wt for Pontiac Firebird without using hard-coded syntax.
 
-* The inner syntax `cars['Model'] == 'Toyota Corolla' acts as a structural row-filtering Boolean mask. It evaluates each value in the `Model` variable column, filtering matches as `True` and mismatches as `False`. When it is placed inside the DataFrame subsetting bracket `cars[]`, it extracts only the elements that are true and stores them under the arbitrary variable `toyota`.
+* The syntax `toyota = cars['Model'] == 'Toyota Corolla']` acts as a structural row-filtering Boolean mask. It evaluates each value in the `Model` variable column, filtering matches as `True` and mismatches as `False`. When it is placed inside the DataFrame subsetting bracket `cars[]`, it extracts only the elements that are true and stores them under the arbitrary variable `toyota`.
 
   ```
   toyota = cars[cars['Model'] == 'Toyota Corolla']
@@ -78,7 +79,7 @@ The problem asks to display the complete row for the Toyota Corolla and only the
 * The syntax ` pontiac = cars.loc[(cars['Model']=='Pontiac Firebird'), ['Model', 'mpg', 'hp', 'wt']]`, is a criterion used to locate specific points in the dataset, extracting relevant cells, and storing it to a new variable  `pontiac`.
     * `cars.loc` --> The property that the process handles axis selection across two distinct dimensions separated by a comma.
     * `cars['Model'] == 'Pontiac Firebird'` -->  The first dimension, performs a conditional string-matching check on the `Model` feature to                 automatically locate the precise observation row index.
-    * `['Model', 'mpg', 'hp', 'wt'] --> This is an ordered array list of strings to define a selection boundary across the horizontal axis of the           DataFrame. It asks the system to extract unlisted data properties and only assigns the ask values to the four designated column labels.
+    * `['Model', 'mpg', 'hp', 'wt']` --> This is an ordered array list of strings to define a selection boundary across the horizontal axis of the           DataFrame. It asks the system to extract unlisted data properties and only assigns the ask values to the four designated column labels.
   
   ```
   pontiac = cars.loc[(cars['Model']=='Pontiac Firebird'), ['Model', 'mpg', 'hp', 'wt']]
@@ -91,12 +92,12 @@ The problem asks to display the complete row for the Toyota Corolla and only the
 # C. MULTI-MODEL SUBSETTING
 The problem asks to display data stored under selected_cars for the models: Datsun 710, Lotus Europa, and Ferrari Dino, keeping their records for Model, mpg, cyl, hp, and gear, but using their model values and displaying their shape.
 
-* The `selected_cars = cars.loc[(cars['Model']=='Datsun 710') | (cars['Model']=='Lotus Europa')|(cars['Model']=='Ferrari Dino'), ['Model', 'mpg', 'cyl', 'hp', 'gear']]` functions to isolate rows simultaenously and saving it to the the variable selected_cars.
+* The `selected_cars = cars.loc[(cars['Model']=='Datsun 710') | (cars['Model']=='Lotus Europa')|(cars['Model']=='Ferrari Dino'), ['Model', 'mpg', 'cyl', 'hp', 'gear']]` functions to isolate rows simultaneously and saving it to the the variable selected_cars.
   * `selected_cars =cars.loc[(cars['Model']=='Datsun 710') | (cars['Model']=='Lotus Europa')|(cars['Model']=='Ferrari Dino')` --> It functions as a multi-conditional string using OR operator, `|` to automatically locate the precise observation row indices fpr the three car mode;s. IT stacks specific target positions into a single Boolean mask without relying on hard-coded row placements.
   * `['Model', 'mpg', 'hp', 'wt']]` --> It acts as a column filter using an ordered list of string materials. It instructs the indexing system to truncate the dataset's horizontal width, extracting only the five requested variable columns.
 
    ```
-   selected_cars =cars.loc[(cars['Model']=='Datsun 710') | (cars['Model']=='Lotus Europa')|(cars['Model']=='Ferrari Dino'), ['Model', 'mpg', 'cyl',       'hp', 'gear']] 
+   selected_cars =cars.loc[(cars['Model']=='Datsun 710') | (cars['Model']=='Lotus Europa')|(cars['Model']=='Ferrari Dino'), ['Model', 'mpg', 'cyl', 'hp', 'gear']] 
   selected_cars
 
          Model	    mpg	 cyl hp	gear
@@ -104,7 +105,7 @@ The problem asks to display data stored under selected_cars for the models: Dats
   27	Lotus Europa	30.4	4	 113	5
   29	Ferrari Dino	19.7	6	 175	5
    ```
-* The `selected_cars.shape reads the dimensional layout parameters of the targeted subset DataFrame. It outputs an execution tuple formatted in (rows, columns) to verify that the extracted object strictly follows the required dimensions.
+* The `selected_cars.shape` reads the dimensional layout parameters of the targeted subset DataFrame. It outputs an execution tuple formatted in (rows, columns) to verify that the extracted object strictly follows the required dimensions.
 
    ```
    selected_cars.shape
